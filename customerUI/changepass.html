@@ -5,24 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Change Passworld </title>
+    <title>OT | layout</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/mdb.min.css">
+    <link rel="stylesheet" href="/assets/css/sweetalert2.min.css">
     <link rel="stylesheet" href="/assets/css/styleInput.css">
     <link rel="stylesheet" href="/assets/css/style.css">
-
-    <style>
-        section{
-         background-image: url();
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
-    </style>
+    <script src="/assets/js/sweetalert2.min.js"></script>
+    <script src="/assets/js/angular.min.js"></script>
+    <script src="/assets/js/angular-route.js"></script>
+    <script src="/assets/js/angular-animate.js"></script>
 </head>
 
-<body>
+<body class="fixed-sn white-skin" ng-app="myApp">
+   
+   
 
 <section>
     <div class="col-lg-8 m-auto">
@@ -30,21 +28,19 @@
 
             <div class="view view-cascade gradient-card-header" style="background-image: url(img/H4tz.gif); background-position: center;background-repeat: no-repeat;background-size: cover;">
 
-                
-
-            
+                <h2 class="card-header-title text-center black-text">Đổi mật khẩu</h2>
             </div>
 
             <div class="card-body card-body-cascade p-5">
-                <h2 class="card-header-title black-text text-center">Đổi mật khẩu</h2>
+
                 <form name="frmChangPass">
 
                     <div class="md-form md-outline">
                         <i class="fas fa-lock prefix deep-purple-text"></i>
                         <input minlength="6" name="oldpassword" ng-model="oldpassword" type="password" id="oldpassword" class="form-control border-primary" required>
                         <label class="bg-white deep-purple-text rounded px-2 ml-5" for="oldpassword"><strong>Mật khẩu cũ</strong></label>
-                        <!-- <small ng-show="frmChangPass.oldpassword.$error.required" id="oldpassword" class="form-text text-danger">Vui lòng nhập mật khẩu cũ</small>
-                        <small ng-show="frmChangPass.oldpassword.$error.minlength" id="oldpassword" class="form-text text-danger">Mật khẩu không đúng</small> -->
+                        <small ng-show="frmChangPass.oldpassword.$error.required" id="oldpassword" class="form-text text-danger">Vui lòng nhập mật khẩu cũ</small>
+                        <small ng-show="frmChangPass.oldpassword.$error.minlength" id="oldpassword" class="form-text text-danger">Mật khẩu không đúng</small>
 
                     </div>
 
@@ -52,17 +48,17 @@
                         <i class="fas fa-lock prefix deep-purple-text"></i>
                         <input minlength="6" name="password" ng-model="studentR.password" type="password" id="password" class="form-control border-primary" required>
                         <label class="bg-white deep-purple-text rounded px-2 ml-5" for="password"><strong>Mật khẩu mới</strong> </label>
-                        <!-- <small ng-show="frmChangPass.password.$error.required" id="password" class="form-text text-danger">Vui lòng nhập mật khẩu mới</small>
-                        <small ng-show="frmChangPass.password.$error.minlength" id="password" class="form-text text-danger">Mật khẩu phải hơn 6 kí tự</small> -->
+                        <small ng-show="frmChangPass.password.$error.required" id="password" class="form-text text-danger">Vui lòng nhập mật khẩu mới</small>
+                        <small ng-show="frmChangPass.password.$error.minlength" id="password" class="form-text text-danger">Mật khẩu phải hơn 6 kí tự</small>
 
                     </div>
                     <div class="md-form md-outline">
                         <i class="fas fa-lock prefix deep-purple-text"></i>
                         <input name="renewpassword" ng-model="renewpassword" type="password" id="renewpassword" class="form-control border-primary" required re-pass>
                         <label class="bg-white deep-purple-text rounded px-2 ml-5" for="renewpassword"><strong>Mật khẩu mới (nhập lại)</strong> </label>
-                        <!-- <small ng-show="frmChangPass.renewpassword.$error.required" id="renewpassword1" class="form-text text-danger">Vui lòng nhập lại mật khẩu</small>
+                        <small ng-show="frmChangPass.renewpassword.$error.required" id="renewpassword1" class="form-text text-danger">Vui lòng nhập lại mật khẩu</small>
                         <small ng-show="frmChangPass.renewpassword.$invalid && !frmChangPass.renewpassword.$error.required" id="renewpassword2" class="form-text text-danger">Mật khẩu nhập lại không khớp</small>
-             -->       </div> 
+                    </div>
                     <div class="text-center mt-4">
                         <button ng-click="change()" ng-disabled="frmChangPass.$invalid" class="btn purple-gradient btn-rounded">Đổi mật khẩu</button>
                     </div>
@@ -72,6 +68,29 @@
 
         </div>
     </div>
- </section>
+</section>
+   
+
+    <!-- SCRIPTS -->
+    <script src="/assets/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="/assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/assets/js/mdb.min.js"></script>
+    <script src="/assets/js/app/myApp.js"></script>
+    <script src="/assets/js/app/changepasswordCtrl.js"></script>
+   
+    <script>
+        $(".button-collapse").sideNav();
+
+        var container = document.querySelector('.custom-scrollbar');
+        var ps = new PerfectScrollbar(container, {
+            wheelSpeed: 2,
+            wheelPropagation: true,
+            minScrollbarLength: 20
+        });
+        // Animation init
+        new WOW().init();
+    </script>
 </body>
+
 </html>
