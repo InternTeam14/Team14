@@ -40,19 +40,20 @@
                         <span class="main__logo--text bold" style="font-size: 26px;">Tên website</span>
                     </div>
                 </a>
+                <a href="statistics.html" class="list-group-item list-group-item-action">Dashboard</a>
                 <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#subTabDish"
                     role="button" aria-expanded="false" aria-controls="collapseExample">Quản lý
                     <i class="fa-solid fa-angle-down icon-angle"></i>
                 </a>
                 <div class="collapse" id="subTabDish">
                     <a href="#" class="list-group-item list-group-item-action sub-tabs">Quản lý danh mục</a>
-                    <a href="#" class="list-group-item list-group-item-action sub-tabs">Quản lý hãng</a>
+                    <a href="managementManufacturer.html" class="list-group-item list-group-item-action sub-tabs">Quản lý hãng</a>
                     <a href="#" class="list-group-item list-group-item-action sub-tabs">Quản lý sản phẩm</a>
                 </div>
                 <a href="#" class="list-group-item list-group-item-action">Quản lý đơn hàng</a>
                 <a href="#" class="list-group-item list-group-item-action">Quản lý khách hàng</a>
-                <a href="#" class="list-group-item list-group-item-action">Quản lý tài xế</a>
-                <a href="#" class="list-group-item list-group-item-action">Thống kê</a>
+                <a href="managerment_ statistics_delivery.html" class="list-group-item list-group-item-action">Thống kê tài xế giao hàng</a>
+        
                 <a href="#" class="list-group-item list-group-item-action">Đăng xuất</a>
             </div>
         </div>
@@ -89,8 +90,8 @@
                             <td th:text="${item.price}">Nam</td>
                             <td th:text="${item.quantity}">0708116524</td>
                             <td th:text="${item.facture}">thanhducam@gmail.com</td>
-                            <td><a class="edit" th:href="@{'/admin/products/edit/'+${item.productId}}">Chat</a>
-                                | <a th:href="@{'/admin/products/delete/'+${item.productId}}">Delete</a>
+                            <td><a class="edit" th:href="@{'/admin/products/edit/'+${item.productId}}">Edit</a>
+                                | <a th:href="@{'/admin/products/delete/'+${item.productId}}">Khóa</a>
                             </td>
                         </tr>
                         <tr th:each="item : ${products}">
@@ -99,8 +100,8 @@
                             <td th:text="${item.price}">Nam</td>
                             <td th:text="${item.quantity}">03452892</td>
                             <td th:text="${item.facture}">ro123@gmail.com</td>
-                            <td><a class="edit" th:href="@{'/admin/products/edit/'+${item.productId}}">Chat</a>
-                                | <a th:href="@{'/admin/products/delete/'+${item.productId}}">Delete</a>
+                            <td><a class="edit" th:href="@{'/admin/products/edit/'+${item.productId}}">Edit</a>
+                                | <a th:href="@{'/admin/products/delete/'+${item.productId}}">Khóa</a>
                             </td>
                         </tr>
                     </tbody>
