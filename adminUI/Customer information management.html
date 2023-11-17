@@ -1,0 +1,113 @@
+!DOCTYPE html>
+<html>
+<head>
+    <title>Quản lý người dùng</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        table, th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        
+        th {
+            background-color: #dddddd;
+        }
+        
+        .pagination {
+            display: inline-block;
+        }
+        
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            border: 1px solid #ddd;
+        }
+        
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+        
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+        
+        .title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="title">Quản lý người dùng</h2>
+    
+    <input type="text" id="searchInput" onkeyup="searchUser()" placeholder="Tìm kiếm theo họ và tên">
+    
+    <table id="usersTable">
+        <tr>
+            <th>Mã số</th>
+            <th>Họ và tên</th>
+            <th>Email</th>
+            <th>Số điện thoại</th>
+            <th>Ngày sinh</th>
+            <th>Trạng thái</th>
+        </tr>
+        <tr>
+            <td>001</td>
+            <td>Nguyễn Văn A</td>
+            <td>test1@example.com</td>
+            <td>0123456789</td>
+            <td>01/01/1990</td>
+            <td>Hoạt động</td>
+        </tr>
+        <tr>
+            <td>002</td>
+            <td>Trần Thị B</td>
+            <td>test2@example.com</td>
+            <td>0987654321</td>
+            <td>02/02/1995</td>
+            <td>Không hoạt động</td>
+        </tr>
+        <!-- Các dòng dữ liệu khác -->
+    </table>
+    
+    <div class="pagination">
+        <a href="#">&laquo;</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">&raquo;</a>
+    </div>
+    
+    <script>
+        function searchUser() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("usersTable");
+            tr = table.getElementsByTagName("tr");
+        
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
